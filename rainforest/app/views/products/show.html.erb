@@ -1,4 +1,7 @@
-<h1>show page</h1>
+<h1><%= "#{@product.name.capitalize}" %></h1>
 
+<p><%= link_to "Back to index", "/products" %></p>
 
 <%=@product.name%> : <%=@product.price %>¢
+
+<p><%= link_to "Edit", "/products/#{@product.id}/edit" %></p>

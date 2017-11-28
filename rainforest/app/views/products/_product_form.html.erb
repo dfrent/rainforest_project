@@ -1,0 +1,24 @@
+<%= link_to "Back to index", "/products" %>
+
+<%= form_for product do |form_helper| %>
+
+  <p>
+    <%= form_helper.label :name %>:
+    <%= form_helper.text_field :name %>
+  </p>
+
+  <p>
+    <%= form_helper.label :price %>:
+    <%= form_helper.number_field :price %>
+  </p>
+
+  <p>
+    <%= form_helper.label :description %>:
+    <%= form_helper.text_field :description %>
+  </p>
+
+  <p>
+    <%= form_helper.submit "Submit" %>
+  </p>
+
+<% end %>
