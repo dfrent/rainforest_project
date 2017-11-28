@@ -18,6 +18,10 @@
         <div class="review_time">
           <%= review.created_at %>
         </div>
+        <div class="review_edit">
+          <%= link_to "Edit review", "/products/#{@product.id}/reviews/#{review.id}/edit" %>
+
+        </div>
       </li>
     <% end %>
   </ul>
@@ -28,21 +32,8 @@
     <%= form_helper.label :review_text %>
     <%= form_helper.text_field :review_text %>
   </p>
+ <p>
+   <%= form_helper.submit 'submit' %>
+ </p>
 
-  <p>
-    <%= form_helper.submit 'submit' %>
-  </p>
-
-<% end %>
-
-<% if @review.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-    <ul>
-    <% @review.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
 <% end %>
