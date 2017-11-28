@@ -20,24 +20,26 @@ class ReviewsController < ApplicationController
 
   def update
   @review = Review.find(params[:id])
-  @review.review_text = params[:review_text][:name]
+  @product = @review.product
+  @review.review_text = params[:review][:review_text]
 
-    if @review.save
-      redirect_to products_url
-    else
-      render "/reviews/edit"
-    end
+  if @review.save
+    redirect_to "/products/#{@product.id}"
+  else
+    render "/reviews/edit"
+  end
   end
 
   def edit
     @review = Review.find(params[:id])
-    @product = Product.find(params[:id])
+    @product = @review.product
   end
 
   def destroy
     @review = Review.find(params[:id])
+    @product = @review.product
     @review.destroy
-    redirect_to products_url
+    redirect_to "/products/#{@product.id}"
   end
 
 end

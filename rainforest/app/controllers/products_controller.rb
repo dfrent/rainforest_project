@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     @product.price = params[:product][:price]
     @product.description = params[:product][:description]
 
-    if  @product.save
+    if @product.save
       redirect_to products_url
     else
       redirect_to edit_products_url
