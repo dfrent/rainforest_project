@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
     @review.product = product
 
     if @review.save
+      flash[:notice] = "You have successfully created a new review."
       redirect_to product_url(product)
     else
       render '/products/show'
@@ -32,6 +33,7 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    flash[:notice] = "You have successfully edited your review."
     @product = @review.product
   end
 
@@ -39,6 +41,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @product = @review.product
     @review.destroy
+    flash[:notice] = "You have successfully deleted your review."
     redirect_to "/products/#{@product.id}"
   end
 

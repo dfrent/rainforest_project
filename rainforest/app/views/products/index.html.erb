@@ -3,7 +3,7 @@
 
 <% @products.each do |product| %>
   <ul>
-    <li><a href="#"></a></li>
+    <li><img src="https://picsum.photos/200/200/?random" alt=""></li>
     <li><%= link_to "#{product.name}", "/products/#{product.id}" %>: <%= product.price_in_dollars %></li>
     <li><%= product.description %></li>
   </ul>
