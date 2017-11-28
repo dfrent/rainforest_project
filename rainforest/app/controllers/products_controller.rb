@@ -26,7 +26,24 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:id])
+    @product.name = params[:product][:name]
+    @product.price = params[:product][:price]
+    @product.description = params[:product][:description]
 
+    if  @product.save
+      redirect_to products_url
+    else
+      redirect_to edit_products_url
+    end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def destroy
+    redirect_to products_url
   end
 
 end
