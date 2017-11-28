@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -47,5 +48,7 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to products_url
   end
+
+
 
 end
