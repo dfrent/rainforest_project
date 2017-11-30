@@ -3,8 +3,23 @@
 
 <% @products.each do |product| %>
   <ul>
-    <li><img src="https://picsum.photos/200/200/?random" alt=""></li>
-    <li><%= link_to "#{product.name}", "/products/#{product.id}" %>: <%= product.price_in_dollars %></li>
-    <li><%= product.description %></li>
+    <li class='image_tab'>
+      <%= link_to(image_tag("https://picsum.photos/200/200/?random"), "products/#{product.id}") %>
+    </li>
+
+    <li class='product_info'>
+      <span class="product_name">
+        <%= link_to "#{product.name}:", "/products/#{product.id}" %>
+      </span>
+
+      <span class="product_price">
+        <%= product.price_in_dollars %>
+      </span>
+    </li>
+
+    <li class='product_description'>
+      <%= product.description %>
+    </li>
+
   </ul>
 <% end %>

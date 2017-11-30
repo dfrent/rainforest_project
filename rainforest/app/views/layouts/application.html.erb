@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rainforest</title>
+    <title>Rainforest Shopping Center</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,19 +11,27 @@
   <body>
       <nav>
         <ul>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%=link_to "Add New Product", "/products/new"%></li>
+          <li class='navbar'><%= link_to "Home", root_path %></li>
+          <li class='navbar'><%=link_to "Add New Product", "/products/new"%></li>
         </ul>
       </nav>
 
       <% if flash[:notice] %>
         <p class="notice"><%= flash[:notice] %></p>
       <% end %>
-      
+
       <% if flash[:alert] %>
         <p class="alert"><%= flash[:alert] %></p>
       <% end %>
 
     <%= yield %>
+
+    <footer>
+      <ul>
+        <li class='navbar'><%= link_to "Home", root_path %></li>
+        <li class='navbar'><%=link_to "Add New Product", "/products/new"%></li>
+      </ul>
+    </footer>
+
   </body>
 </html>
