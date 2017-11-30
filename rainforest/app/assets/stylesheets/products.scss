@@ -1,3 +1,106 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+body {
+  font-family: Sans-Serif;
+}
+
+nav {
+    border: black;
+    border-style: solid;
+    background-color: #444;
+}
+
+.navbar {
+    display: inline-block;
+    list-style: none;
+    padding: 20px;
+}
+
+.navbar:hover {
+  background-color: #bfbfbf;
+}
+
+.navbar_text {
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 900;
+    color: #061245;
+}
+
+.navbar_text:visited {
+  color: #061245;
+}
+
+.navbar_text:active {
+  color: #065E24;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0px;
+}
+
+.product_wrapper {
+    text-align: center;
+    display: inline-block;
+    max-width: 35%;
+    min-width: 35%;
+    background-color: #bfbfbf;
+    padding: 10px;
+    margin: 10px;
+    border-style: solid;
+}
+
+.products_page_wrapper {
+    text-align: center;
+    background-color: #acacac;
+}
+
+.image_tab {
+
+}
+
+.product_info {
+    display: inline-block;
+}
+
+footer {
+    border: black;
+    border-style: solid;
+    background-color: #444;
+}
+
+.footer_text {
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 900;
+    color: #061245;
+}
+
+.footer_text:visited {
+  color: #061245;
+}
+
+.footer_text:active {
+  color: #065E24;
+}

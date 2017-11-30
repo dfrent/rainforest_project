@@ -1,25 +1,26 @@
-<h1>Products Index</h1>
-<%= link_to "Add new product!", "/products/new" %>
+<div class="products_page_wrapper">
+  <% @products.each do |product| %>
+    <div class="product_wrapper">
+      <ul>
+        <li class='product_info'>
+          <span class="product_name">
+            <%= link_to "#{product.name}:", "/products/#{product.id}" %>
+          </span>
 
-<% @products.each do |product| %>
-  <ul>
-    <li class='image_tab'>
-      <%= link_to(image_tag("https://picsum.photos/200/200/?random"), "products/#{product.id}") %>
-    </li>
+          <span class="product_price">
+            <%= product.price_in_dollars %>
+          </span>
+        </li>
 
-    <li class='product_info'>
-      <span class="product_name">
-        <%= link_to "#{product.name}:", "/products/#{product.id}" %>
-      </span>
+        <li class='image_tab'>
+          <%= link_to(image_tag("https://picsum.photos/200/200/?random"), "products/#{product.id}") %>
+        </li>
 
-      <span class="product_price">
-        <%= product.price_in_dollars %>
-      </span>
-    </li>
+        <li class='product_description'>
+          <%= product.description %>
+        </li>
 
-    <li class='product_description'>
-      <%= product.description %>
-    </li>
-
-  </ul>
-<% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

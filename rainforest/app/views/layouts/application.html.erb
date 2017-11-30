@@ -11,8 +11,8 @@
   <body>
       <nav>
         <ul>
-          <li class='navbar'><%= link_to "Home", root_path %></li>
-          <li class='navbar'><%=link_to "Add New Product", "/products/new"%></li>
+          <li class='navbar'><%= link_to "Home", root_path, class: "navbar_text" %></li>
+          <li class='navbar'><%=link_to "Add New Product", "/products/new", class: "navbar_text" %></li>
         </ul>
       </nav>
 
@@ -28,8 +28,8 @@
 
     <footer>
       <ul>
-        <li class='navbar'><%= link_to "Home", root_path %></li>
-        <li class='navbar'><%=link_to "Add New Product", "/products/new"%></li>
+        <li class='navbar'><%= link_to "Home", root_path, class: "footer_text" %></li>
+        <li class='navbar'><%=link_to "Add New Product", "/products/new", class: "footer_text" %></li>
       </ul>
     </footer>
 
